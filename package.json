@@ -1,0 +1,24 @@
+{
+  "name": "footballStat",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.4"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-date-picker": "^5.3.28",
+    "react-dom": "^15.4.1",
+    "react-player": "^0.14.1",
+    "screenfull": "^3.0.2",
+    "secstamp": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

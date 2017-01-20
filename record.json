@@ -1,0 +1,261 @@
+[
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "pass",                           // 传球
+    team: "home",                             // possible value: "home", "guest" - 主队/客队
+    from: 1,                                  // From player
+    to: 2,                                    // To player
+    result: "success",                        // possible value: "success","failure", "NA"
+    type: "short",                            // possible value: "short", "long" - 短传/长传
+    method: "other",                          // possible value: "other", "head" - 头球/其它
+    threat: false,                            // possible value: true, false - 是否威胁球
+    // opponent records (if result == failure) : interception/clearance
+  },
+  
+  {
+    operation： "delete",                     // delete operation only need id
+    id: 1,
+  },
+  
+  {
+    operation: "modify",                      // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "through",                        // 直塞
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    to: 2,                                    // To player
+    result: "success",                        // possible value: "success","failure", "NA"
+    threat: false,                            // possible value: true, false  - 是否威胁球
+    // opponent records (if result == failure) : interception/clearance
+  },
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "cross",                          // 传中
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    to: 2,                                    // To player
+    result: "success",                        // possible value: "success","failure", "NA"
+    threat: false,                            // possible value: true, false  - 是否威胁球
+    // opponent records: interception/clearance (if result == failure)
+  },
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "dribble",                        // 过人
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    threat: false,                            // possible value: true, false
+    // opponent records: interception (if result == success), interception/clearance (if result == failure)
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "assist",                         // 助攻
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    to: 2,                                    // To player
+    result: "success",                        // always "success"
+    threat: true,                             // always true
+    // opponent records: None
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "shoot",                          // 射门
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    to: 2,                                    // To player
+    result: "success",                        // possible value: "success","failure", "NA"
+    target: "on",                             // possible value: "on", "off" - 范围：门框以内/门框以外
+    method: "rightFoot",                      // possible value: "rightFoot", "leftFoot", "head", "other" - 方式： 左脚/右脚/头球/其它
+    penaltyArea: "inside",                    // possible value: "inside", "outside" - 位置：禁区以内/禁区以外
+    // opponent records: save/block
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "offside",                        // 越位
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "NA",                             // always "NA"
+    // opponent records: None
+  }, 
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "tackle",                         // 抢断
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    method: "common",                         // possible value: "common", "slide", "head" - 方式：普通/铲球/头球
+    // opponent records: dribble
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "interception",                   // 截断
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    // opponent records: pass/through/cross
+  },
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "block",                          // 阻挡
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    // opponent records: shoot
+  },
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "clearance",                      // 解围
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    // opponent records: pass/through/cross/dribble
+  },
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "save",                           // 扑救
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    // opponent records: shoot
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "owngoal",                        // 乌龙球
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "NA",                             // always "NA"
+    // opponent records: NA
+  },  
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "free",                           // 任意球
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "NA",                             // always "NA"
+    type: "direct",                           // possible value: "direct", "indirect" - 类型：直接任意球/间接任意球
+    // opponent records: NA
+  }, 
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "corner",                         // 角球
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "NA",                             // always "NA"
+    type: "non-tactical",                     // possible value: "non-tactical", "tactical" - 类型：非战术角球/战术角球
+    // opponent records: NA
+  }, 
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "penalty",                        // 点球
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    result: "success",                        // possible value: "success","failure", "NA"
+    // opponent records: save
+  }, 
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "foul",                           // 普通犯规
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    opponent: 1,                              // Opponent player - 对方球员
+    result: "NA",                             // always "NA"
+    // opponent records: NA
+  }, 
+  
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "yellow",                         // 黄牌
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    opponent: 1,                              // Opponent player - 对方球员
+    result: "NA",                             // always "NA"
+    // opponent records: NA
+  }, 
+
+  {
+    operation: "add",                         // possible value: "add, delete, modify"
+    id: 1,                                    // unique, increase by 1 for each record
+    time: 1507569200265,                      // mini seconds relative to 1970/1/1 00:00:00
+    action: "red",                            // 普通犯规
+    team: "home",                             // possible value: "home", "guest"
+    from: 1,                                  // From player
+    opponent: 1,                              // Opponent player - 对方球员
+    result: "NA",                             // always "NA"
+    // opponent records: NA
+  },
+]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
